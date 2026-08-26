@@ -46,25 +46,18 @@ os outros em arco ao redor — arraste, use as setas, os pontinhos ou os atalhos
 de categoria). Os 6 modelos em `index.html` continuam com **nomes e specs
 provisórios**:
 
-| Nome provisório | Categoria | Precisa de | Foto de referência |
+| Nome provisório | Categoria | Precisa de | Foto no site |
 |---|---|---|---|
-| ES Urbano | Scooter | nome real, autonomia, velocidade, potência, preço | ✅ scooter prata/cinza — aprovada |
-| ES City Plus | Scooter | idem | ✅ scooter azul + baú (marca "NIZ") — aprovada |
-| ES Max | Maxi-scooter | idem | ✅ citycoco verde "FX2" — aprovada (estilo diferente do "com para-brisa" original, mas cliente confirmou manter) |
-| ES Trail | Moto | idem | ✅ moto trail preta — aprovada |
-| ES Bike | Bicicleta | idem | ✅ moped rosa "Smart Bike" — aprovada como imagem de apoio (ver observação abaixo) |
-| ES Kick | Patinete | idem | ❌ nenhuma foto de patinete recebida ainda |
+| ES Urbano | Scooter | nome real, autonomia, velocidade, potência, preço | ✅ já no ar (scooter prata) |
+| ES City Plus | Scooter | idem | ❌ placeholder — falta o arquivo da scooter azul + baú "NIZ" |
+| ES Max | Maxi-scooter | idem | ❌ placeholder — falta o arquivo do citycoco verde "FX2" (estilo diferente do "com para-brisa" original, mas cliente confirmou manter) |
+| ES Trail | Moto | idem | ✅ já no ar (moto trail preta) |
+| ES Bike | Bicicleta | idem | ✅ já no ar (moped rosa "Smart Bike") |
+| ES Kick | Patinete | idem | ❌ placeholder — nenhuma foto de patinete recebida ainda |
 
-> Cliente confirmou usar todas as fotos acima como enviadas ("pode deixar
-> como enviei mesmo"), incluindo as marcas de terceiros visíveis nas
-> carenagens (NIZ, FX2, Streetgo, Smart Bike) — não vamos mexer nisso.
-> Falta só: (1) os arquivos originais chegarem por anexo — coladas no chat
-> eu só consigo ver e descrever, não salvar o binário — e (2) uma foto de
-> patinete elétrico, que ainda não veio.
->
-> Também foi recebida uma e-bike cinza "Streetgo" (fat tire, câmbio Shimano)
-> sem slot definido — pode virar um 7º modelo ou substituir a "Smart Bike"
-> na ES Bike, à critério de vocês.
+> Também foi descrita (ainda sem arquivo real) uma e-bike cinza "Streetgo"
+> (fat tire, câmbio Shimano) — pode virar um 7º modelo ou substituir a
+> "Smart Bike" na ES Bike, à critério de vocês, quando o arquivo chegar.
 
 Se algum modelo não existir, basta apagar o `<article class="coverflow__card">`
 inteiro (e o `<button class="cf-dot">` correspondente).
@@ -80,40 +73,37 @@ inteiro (e o `<button class="cf-dot">` correspondente).
 
 ## 🟡 Importante — melhora bastante o resultado
 
-### 6. Fotos reais
-Todas as imagens hoje são **blocos placeholder** (`<div class="ph">`).
-Para trocar, substitua o bloco pelo `<img>`:
+### 6. ✅ Fotos reais — 7 de 11 já estão no site
+As fotos chegaram por upload direto no GitHub e já substituíram os
+placeholders correspondentes:
+
+| Onde | Foto | Status |
+|---|---|---|
+| Bento — card grande ("O que é a ElectricShop?") | Fachada aérea com a ponte | ✅ `assets/img/fachada-aerea-ponte.jpg` |
+| Bento — oficina | Oficina com portão pra rua | ✅ `assets/img/oficina-portao-rua.jpg` |
+| Bento — showroom | Interior do showroom | ✅ `assets/img/showroom-interno.jpg` |
+| Lojas — São Vicente | Fachada de vidro na esquina | ✅ `assets/img/fachada-sao-vicente.jpg` |
+| Lojas — Santos | — | ❌ placeholder, sem foto ainda |
+| Carrossel — ES Urbano | Scooter prata | ✅ `assets/img/es-urbano-scooter-prata.jpg` |
+| Carrossel — ES City Plus | Scooter azul + baú "NIZ" | ❌ placeholder, sem foto ainda |
+| Carrossel — ES Max | Citycoco verde "FX2" | ❌ placeholder, sem foto ainda |
+| Carrossel — ES Trail | Moto trail preta | ✅ `assets/img/es-trail-moto.jpg` |
+| Carrossel — ES Bike | Moped rosa "Smart Bike" | ✅ `assets/img/es-bike-smartbike-rosa.jpg` |
+| Carrossel — ES Kick | — | ❌ placeholder, nenhuma foto de patinete recebida |
+
+Para trocar um placeholder que ainda resta, o padrão é sempre este:
 
 ```html
 <!-- antes -->
-<div class="ph ph--loja"><span>Foto: fachada da loja ao anoitecer</span></div>
+<div class="ph ph--prod"><span>Scooter azul + baú</span></div>
 
 <!-- depois -->
-<img src="assets/img/fachada-santos.jpg" alt="Fachada da loja ElectricShop em Santos ao anoitecer" loading="lazy" width="1600" height="1000">
+<img src="assets/img/es-city-plus.jpg" alt="Scooter elétrica ES City Plus" loading="lazy" width="800" height="600">
 ```
 
-Fotos necessárias:
-
-| Onde | Foto |
-|---|---|
-| Bento — card grande | Fachada da loja ao anoitecer |
-| Bento — oficina | Interior da oficina |
-| Bento — showroom | Interior do showroom |
-| Produtos (6×) | Cada modelo em estúdio, fundo branco |
-| Lojas (2×) | Fachada de Santos e de São Vicente |
-
-> As fotos já enviadas por chat estão descritas em `referencias/` mas ainda não
-> vieram como arquivo (ver observação importante logo abaixo sobre 2 delas).
-> Envie os `.jpg` originais para irem para `site/assets/img/`.
-
-> ⚠️ **Uma foto "de loja" recebida não é a ElectricShop e não foi usada.** A
-> foto aérea com as marcas **"E-ELECTRIC"** e **"ATTO MOTORS"** é de outra
-> empresa — cliente confirmou que não tem problema, ela simplesmente não
-> entra no site. As outras duas fotos aéreas/fachada (letreiro "ELECTRIC
-> SHOP" correto) foram aprovadas para uso como enviadas: a fachada de vidro
-> na esquina é a loja de **São Vicente**; a foto com o prédio preto, placas
-> solares e a ponte ao fundo o cliente confirmou manter como está, mesmo com
-> a ponte lembrando mais São Paulo capital do que a Baixada Santista.
+> **Duas fotos recebidas foram removidas do repositório:** uma foto de
+> loja com marca de outra empresa ("E-ELECTRIC"/"ATTO MOTORS", não
+> ElectricShop) e um arquivo duplicado. Detalhes em `referencias/fotos-loja/INVENTARIO.md`.
 
 ### 7. ✅ Vídeo do hero — comprimido em alta qualidade
 Resolvido. `assets/video/hero.mp4` caiu de 25 MB para **18 MB**, mantendo

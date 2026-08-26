@@ -316,6 +316,12 @@ section[id],main[id]{scroll-margin-top:calc(var(--header-h) + 1.5rem)}
 .ticker__track i{color:var(--accent);font-style:normal;font-size:.7rem}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
+/* Fotos reais dentro dos contêineres de mídia (bento, coverflow, lojas) —
+   os contêineres já definem position+tamanho, a imagem só precisa cobrir. */
+.bento__media img,.coverflow__media img,.store__media img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+
 /* ----------------------------- PLACEHOLDERS DE IMAGEM ------------------- */
 /* Blocos temporários no lugar das fotos reais. Substituir por <img>.        */
 .ph{
