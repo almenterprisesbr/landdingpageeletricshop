@@ -15,17 +15,33 @@ tudo catalogado em **[`site/DADOS-A-PREENCHER.md`](site/DADOS-A-PREENCHER.md)**.
 | **[`briefing/`](briefing/)** | Informações da empresa e perguntas ainda em aberto. |
 | **[`referencias/`](referencias/)** | Fotos, vídeos e material de apoio enviados pelo cliente. |
 
-## Rodando o site
+## Rodando o site no seu computador
 
 Não precisa de build, framework nem `npm install`. É HTML/CSS/JS puro.
+
+**Jeito fácil — sem digitar comando:**
+
+| Sistema | O que fazer |
+|---|---|
+| Windows | dois cliques em `site/rodar-windows.bat` |
+| Mac / Linux | `bash site/rodar-mac-linux.sh` |
+
+Os dois sobem o servidor e já abrem o navegador em `http://localhost:8000`.
+Para parar, feche a janela (Windows) ou aperte `Ctrl+C`.
+
+**Na mão, se preferir:**
 
 ```bash
 cd site
 python3 -m http.server 8000
 ```
 
-Abra `http://localhost:8000`. Para publicar, suba a pasta `site/` em qualquer
-hospedagem estática (Hostinger, Vercel, Netlify, GitHub Pages).
+> Dá para abrir o `site/index.html` com dois cliques também — o site funciona
+> inteiro assim, mas alguns navegadores bloqueiam vídeo local, então o hero
+> pode ficar sem o vídeo de fundo. Com o servidor, tudo funciona.
+
+Para publicar, suba a pasta `site/` em qualquer hospedagem estática
+(Hostinger, Vercel, Netlify, GitHub Pages).
 
 > Dica: acesse com `?revisao` no fim da URL para destacar todos os textos que
 > ainda são provisórios.
