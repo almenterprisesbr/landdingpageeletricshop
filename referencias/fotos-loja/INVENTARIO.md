@@ -27,7 +27,7 @@ Oficina ampla com portão de garagem aberto direto para a calçada, duas scooter
 ## 6. Fachada vista aérea (drone), prédio preto com telhado solar
 Vista aérea/drone ao entardecer de um prédio preto de um andar com placas solares no telhado, letreiro "ELECTRIC SHOP" correto na fachada e uma edificação vizinha com letreiro "OFICINA". Ao fundo, uma ponte estaiada de grande porte — o desenho lembra mais a Ponte Estaiada de São Paulo (capital) do que uma referência típica da Baixada Santista. Enviada com o comentário "foto da loja de noite para colocar no oq é eletric shop" (uso pretendido: card "O que é a ElectricShop?").
 
-> ⚠️ **Pendência:** confirmar com o cliente se este é realmente um imóvel da ElectricShop (e qual cidade/bairro), já que a marca no letreiro está correta mas a ponte ao fundo não é claramente da Baixada Santista.
+> ✅ Cliente confirmou usar como enviada ("pode deixar como enviei mesmo"), sem detalhar a cidade/bairro exato. Liberada para uso no card "O que é a ElectricShop?" assim que o arquivo original chegar.
 
 ## 7. ❌ Fachada "praia" com marca de outra empresa — NÃO USAR
 Vista aérea de um prédio de vidro de 3 andares numa orla à beira-mar ao pôr do sol, com placas solares e área verde no telhado. As fachadas do térreo trazem os dizeres **"E-ELECTRIC"** e **"ATTO MOTORS"** — marcas de terceiros, não ElectricShop. Enviada com o comentário "em santos loja de lá", mas **não corresponde à marca do cliente**. O cliente confirmou "pode deixar assim mesmo" (ciente de que não será usada). Não incorporada a nenhuma parte do site.

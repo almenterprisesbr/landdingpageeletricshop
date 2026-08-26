@@ -46,21 +46,25 @@ os outros em arco ao redor — arraste, use as setas, os pontinhos ou os atalhos
 de categoria). Os 6 modelos em `index.html` continuam com **nomes e specs
 provisórios**:
 
-| Nome provisório | Categoria | Precisa de | Foto de referência recebida? |
+| Nome provisório | Categoria | Precisa de | Foto de referência |
 |---|---|---|---|
-| ES Urbano | Scooter | nome real, autonomia, velocidade, potência, preço | ✅ scooter prata/cinza |
-| ES City Plus | Scooter | idem | ✅ scooter azul + baú (marca "NIZ" visível) |
-| ES Max | Maxi-scooter | idem | ⚠️ recebida (citycoco verde "FX2") — **não é o estilo "com para-brisa" descrito originalmente; confirmar se é o modelo certo** |
-| ES Trail | Moto | idem | ✅ moto trail preta |
-| ES Bike | Bicicleta | idem | ⚠️ 2 fotos recebidas (e-bike cinza "Streetgo" e moped rosa "Smart Bike") — **qual das duas é a ES Bike? são modelos diferentes** |
+| ES Urbano | Scooter | nome real, autonomia, velocidade, potência, preço | ✅ scooter prata/cinza — aprovada |
+| ES City Plus | Scooter | idem | ✅ scooter azul + baú (marca "NIZ") — aprovada |
+| ES Max | Maxi-scooter | idem | ✅ citycoco verde "FX2" — aprovada (estilo diferente do "com para-brisa" original, mas cliente confirmou manter) |
+| ES Trail | Moto | idem | ✅ moto trail preta — aprovada |
+| ES Bike | Bicicleta | idem | ✅ moped rosa "Smart Bike" — aprovada como imagem de apoio (ver observação abaixo) |
 | ES Kick | Patinete | idem | ❌ nenhuma foto de patinete recebida ainda |
 
-> As fotos recebidas mostram marcas de terceiros nos veículos (NIZ, FX2,
-> Streetgo, Smart Bike). Isso é normal se vocês revendem/rebrandam esses
-> modelos — mas se a ideia é reforçar "fabricação própria brasileira",
-> vale confirmar: são fotos de catálogo do fornecedor (só pra eu ter uma
-> referência visual) ou são as peças reais que vocês vendem com a marca
-> deles à mostra? Isso muda a forma como vou apresentar esse ponto no site.
+> Cliente confirmou usar todas as fotos acima como enviadas ("pode deixar
+> como enviei mesmo"), incluindo as marcas de terceiros visíveis nas
+> carenagens (NIZ, FX2, Streetgo, Smart Bike) — não vamos mexer nisso.
+> Falta só: (1) os arquivos originais chegarem por anexo — coladas no chat
+> eu só consigo ver e descrever, não salvar o binário — e (2) uma foto de
+> patinete elétrico, que ainda não veio.
+>
+> Também foi recebida uma e-bike cinza "Streetgo" (fat tire, câmbio Shimano)
+> sem slot definido — pode virar um 7º modelo ou substituir a "Smart Bike"
+> na ES Bike, à critério de vocês.
 
 Se algum modelo não existir, basta apagar o `<article class="coverflow__card">`
 inteiro (e o `<button class="cf-dot">` correspondente).
@@ -102,15 +106,14 @@ Fotos necessárias:
 > vieram como arquivo (ver observação importante logo abaixo sobre 2 delas).
 > Envie os `.jpg` originais para irem para `site/assets/img/`.
 
-> ⚠️ **Duas fotos "de loja" recebidas não são a ElectricShop.** Uma foto aérea
-> mostra uma fachada com as marcas **"E-ELECTRIC"** e **"ATTO MOTORS"** — outra
-> empresa, não a de vocês. Não usei essa imagem em lugar nenhum. Já a fachada
-> de vidro na esquina (com letreiro "ELECTRIC SHOP" correto, oficina do lado)
-> foi confirmada por vocês como a loja de **São Vicente** — essa é boa pra usar.
-> Uma terceira foto aérea (prédio preto com placas solares, letreiro
-> "ELECTRIC SHOP" correto, perto de uma ponte estaiada) parece ser Santos, mas
-> vale confirmar — a ponte na foto lembra mais a Ponte Estaiada de São Paulo
-> (capital) do que algo na Baixada Santista.
+> ⚠️ **Uma foto "de loja" recebida não é a ElectricShop e não foi usada.** A
+> foto aérea com as marcas **"E-ELECTRIC"** e **"ATTO MOTORS"** é de outra
+> empresa — cliente confirmou que não tem problema, ela simplesmente não
+> entra no site. As outras duas fotos aéreas/fachada (letreiro "ELECTRIC
+> SHOP" correto) foram aprovadas para uso como enviadas: a fachada de vidro
+> na esquina é a loja de **São Vicente**; a foto com o prédio preto, placas
+> solares e a ponte ao fundo o cliente confirmou manter como está, mesmo com
+> a ponte lembrando mais São Paulo capital do que a Baixada Santista.
 
 ### 7. ✅ Vídeo do hero — comprimido em alta qualidade
 Resolvido. `assets/video/hero.mp4` caiu de 25 MB para **18 MB**, mantendo
