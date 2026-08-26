@@ -80,7 +80,8 @@ Testado em navegador real (Chromium via Playwright), a 1440px e 390px:
 
 1. **Fotos reais** — hoje o site usa blocos placeholder. As fotos enviadas por
    chat estão descritas em `referencias/`, mas ainda não vieram como arquivo.
-2. **Vídeo do hero com 25 MB** — funciona, mas o ideal é comprimir para 3–6 MB.
-   O comando está em `site/DADOS-A-PREENCHER.md`.
-3. **Formulário sem back-end** — hoje só simula o envio.
-4. **Dados de contato, endereços e fichas técnicas** — todos provisórios.
+2. **Formulário sem back-end** — hoje só simula o envio.
+3. **Dados de contato, endereços e fichas técnicas** — todos provisórios.
+
+Vídeo do hero já foi comprimido (25 MB → 5,3 MB) e o poster agora é um frame
+real extraído do próprio vídeo. Detalhes em `site/DADOS-A-PREENCHER.md`.

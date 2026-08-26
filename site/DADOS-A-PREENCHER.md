@@ -89,30 +89,29 @@ Fotos necessárias:
 > As fotos já enviadas por chat estão descritas em `referencias/` mas ainda não
 > vieram como arquivo. Envie os `.jpg` originais para irem para `site/assets/img/`.
 
-### 7. Vídeo do hero — compressão
-`assets/video/hero.mp4` tem **25 MB**. Funciona, mas é pesado para celular no 4G.
-Recomendado comprimir para 3–6 MB antes de publicar:
+### 7. ✅ Vídeo do hero — já comprimido
+Resolvido. `assets/video/hero.mp4` caiu de 25 MB para **5,3 MB** (mesma
+resolução 1080p, sem áudio — o vídeo já toca mudo — e com faststart para
+começar a tocar antes de baixar tudo). `assets/video/oficina.mp4` caiu de
+2,4 MB para 404 KB.
+
+Se quiser comprimir ainda mais no futuro (ex.: para o site carregar mais
+rápido em 4G), o comando usado foi:
 
 ```bash
-ffmpeg -i hero.mp4 -t 15 -an -vf "scale=1920:-2" \
-  -c:v libx264 -crf 28 -preset slow -movflags +faststart hero-web.mp4
+ffmpeg -i hero-original.mp4 -an -vf "scale=1920:-2" \
+  -c:v libx264 -crf 28 -preset slow -movflags +faststart hero.mp4
 ```
 
-- `-t 15` corta em 15s (ideal para loop de hero)
-- `-an` remove o áudio (o vídeo já toca mudo)
-- `-movflags +faststart` faz o vídeo começar antes de baixar tudo
+Aumentar o `-crf` (ex.: 30–32) reduz ainda mais o tamanho, com leve perda de
+qualidade.
 
-Gerar também uma versão `.webm` melhora ainda mais em navegadores modernos.
-
-> Não consegui fazer isso aqui: o ffmpeg disponível neste ambiente é uma build
-> reduzida, sem suporte a H.264.
-
-### 8. Poster do vídeo
-`assets/img/hero-poster.svg` é um gradiente genérico que aparece enquanto o vídeo
-carrega. O ideal é um frame real do próprio vídeo:
+### 8. ✅ Poster do vídeo — já é um frame real
+Resolvido. `assets/img/hero-poster.jpg` e `assets/img/oficina-poster.jpg` são
+frames reais extraídos dos próprios vídeos (não mais um gradiente genérico):
 
 ```bash
-ffmpeg -i hero.mp4 -ss 00:00:02 -vframes 1 -q:v 2 hero-poster.jpg
+ffmpeg -i hero.mp4 -ss 00:00:03 -vframes 1 -q:v 3 hero-poster.jpg
 ```
 
 ---
