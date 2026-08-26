@@ -1,25 +1,70 @@
 # ElectricShop — Site Institucional
 
-Repositório de desenvolvimento do site institucional da **ElectricShop**, rede de lojas de mobilidade elétrica na Baixada Santista (SP).
+Site institucional da **ElectricShop**, rede de lojas de mobilidade elétrica na Baixada Santista (SP).
 
-## Status atual: 🟡 Levantamento de briefing
+## Status: 🟢 Primeira versão do site construída
 
-Ainda estamos na fase de coleta de informações e referências, antes de iniciar o design e a construção do site. Nenhum código de site foi criado ainda — isso vem depois que o briefing estiver mais completo.
+O site está funcional e navegável. Falta apenas substituir fotos e dados reais —
+tudo catalogado em **[`site/DADOS-A-PREENCHER.md`](site/DADOS-A-PREENCHER.md)**.
 
 ## Estrutura de pastas
 
-- **[`briefing/`](briefing/)** — Informações sobre a empresa, produtos, serviços e objetivos do site, além da lista de perguntas em aberto para o cliente.
-- **[`referencias/`](referencias/)** — Fotos das lojas/oficina, fotos de produto, moodboards e sites concorrentes usados como inspiração visual.
-- **`site/`** *(ainda não criada)* — Vai concentrar o código do site assim que o briefing estiver fechado e a stack estiver definida.
+| Pasta | O que tem |
+|---|---|
+| **[`site/`](site/)** | O site em si — HTML, CSS, JS e mídias. |
+| **[`briefing/`](briefing/)** | Informações da empresa e perguntas ainda em aberto. |
+| **[`referencias/`](referencias/)** | Fotos, vídeos e material de apoio enviados pelo cliente. |
 
-## Sobre a empresa (resumo)
+## Rodando o site
 
-- **Nome:** ElectricShop
-- **Setor:** Mobilidade elétrica (motos/scooters elétricas, bicicletas elétricas, patinetes)
-- **Região:** Baixada Santista (SP)
-- **Lojas:** São Vicente e Santos, cada uma com oficina própria integrada
-- **Diferencial:** Fabricação própria brasileira
-- **Identidade visual:** Moderna, paleta preto e branco
-- **Objetivo do site:** Transmitir confiança e profissionalismo
+Não precisa de build, framework nem `npm install`. É HTML/CSS/JS puro.
 
-Detalhes completos em [`briefing/briefing-inicial.md`](briefing/briefing-inicial.md) e perguntas em aberto em [`briefing/perguntas-pendentes.md`](briefing/perguntas-pendentes.md).
+```bash
+cd site
+python3 -m http.server 8000
+```
+
+Abra `http://localhost:8000`. Para publicar, suba a pasta `site/` em qualquer
+hospedagem estática (Hostinger, Vercel, Netlify, GitHub Pages).
+
+> Dica: acesse com `?revisao` no fim da URL para destacar todos os textos que
+> ainda são provisórios.
+
+## Direção de design
+
+Referências aprovadas: [363sudbury.com](https://363sudbury.com/) e
+[vincentetdussault.com](https://vincentetdussault.com/) — daí vieram o
+**bento grid escuro**, os cards com ícone e seta diagonal, os números grandes
+e o clima cinematográfico.
+
+- **Paleta:** preto e branco da marca + verde-limão `#C8FF3D` de destaque
+  (mesma família do verde já usado na comunicação das lojas)
+- **Tipografia:** Space Grotesk (títulos) + Inter (texto)
+- **Movimento:** revelação ao rolar, contadores, ticker, parallax sutil —
+  tudo desligado automaticamente para quem usa "reduzir movimento" no sistema
+
+## Seções
+
+Hero com vídeo em tela cheia → ticker → a empresa (bento) → números →
+catálogo com filtros → oficina → fabricação nacional → lojas → depoimentos →
+FAQ → formulário de test-ride → rodapé.
+
+## O que foi verificado
+
+Testado em navegador real (Chromium via Playwright), a 1440px e 390px:
+
+- ✅ Sem rolagem horizontal em nenhuma das duas larguras
+- ✅ Filtro de produtos, validação do formulário, menu mobile, acordeão e contadores
+- ✅ Nenhum erro de JavaScript
+- ✅ Contraste: 7,49:1 no texto secundário e 9,01:1 no card verde (mínimo exigido: 4,5:1)
+- ✅ Hierarquia de títulos sem saltos; todos os alvos de toque ≥ 44px
+- ✅ Campos com rótulo, links com nome acessível, `prefers-reduced-motion` respeitado
+
+## Pendências conhecidas
+
+1. **Fotos reais** — hoje o site usa blocos placeholder. As fotos enviadas por
+   chat estão descritas em `referencias/`, mas ainda não vieram como arquivo.
+2. **Vídeo do hero com 25 MB** — funciona, mas o ideal é comprimir para 3–6 MB.
+   O comando está em `site/DADOS-A-PREENCHER.md`.
+3. **Formulário sem back-end** — hoje só simula o envio.
+4. **Dados de contato, endereços e fichas técnicas** — todos provisórios.

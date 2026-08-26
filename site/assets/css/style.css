@@ -186,8 +186,9 @@ section[id],main[id]{scroll-margin-top:calc(var(--header-h) + 1.5rem)}
 
 .nav{display:flex;gap:.35rem}
 .nav a{
-  position:relative;padding:.55rem .9rem;border-radius:100px;
+  position:relative;padding:.7rem .9rem;border-radius:100px;
   font-size:.88rem;color:var(--muted);transition:color .25s,background .25s;
+  display:inline-flex;align-items:center;min-height:44px; /* alvo de toque */
 }
 .nav a::after{
   content:"";position:absolute;left:.9rem;right:.9rem;bottom:.35rem;height:1px;
@@ -283,6 +284,7 @@ section[id],main[id]{scroll-margin-top:calc(var(--header-h) + 1.5rem)}
   margin-left:auto;display:flex;align-items:center;gap:.65rem;
   font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
   transition:color .25s;
+  min-height:44px;padding-inline:.25rem; /* alvo de toque */
 }
 .hero__scroll:hover{color:var(--accent)}
 .hero__scroll-line{
@@ -603,13 +605,18 @@ section[id],main[id]{scroll-margin-top:calc(var(--header-h) + 1.5rem)}
 .footer__brand>p{color:var(--muted);font-size:.88rem;margin:1.25rem 0;max-width:38ch}
 .socials{display:flex;gap:.55rem}
 .socials a{
-  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
   border:1px solid var(--line-2);color:var(--muted);
   transition:color .3s,border-color .3s,transform .35s var(--ease),background .3s;
 }
 .socials a:hover{color:var(--accent-ink);background:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
-.footer__col h4{font-family:var(--font-display);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem}
+.footer__col h3{font-family:var(--font-display);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem}
 .footer__col a,.footer__col p{display:block;color:var(--muted);font-size:.88rem;margin-bottom:.7rem;transition:color .25s}
+/* links de navegação do rodapé com altura de toque confortável */
+.footer__col nav a,nav.footer__col a{margin-bottom:0}
+.footer__col a[href^="#"]:not(.btn){
+  padding:.7rem 0;margin-bottom:0;min-height:44px;display:flex;align-items:center;
+}
 .footer__col a:hover{color:var(--accent)}
 .footer__col .btn{display:inline-flex;margin-top:.4rem;color:var(--accent-ink)}
 .footer__bottom{
