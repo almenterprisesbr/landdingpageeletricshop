@@ -38,6 +38,8 @@ Já recebi 7 fotos por meio da conversa (loja, oficina, showroom e produtos — 
 
 As fotos ainda não puderam ser salvas como arquivo binário (ver nota nos inventários); os vídeos já estão versionados normalmente, pois vieram como anexo de arquivo real.
 
+O cliente já definiu o **vídeo principal de abertura (hero) do site**: [`referencias/videos/video-principal-abertura-site.mp4`](../referencias/videos/README.md). Isso resolve uma das perguntas da seção 8 do briefing de perguntas — o site terá vídeo de fundo na home, não apenas imagem estática.
+
 ## 4. Primeiras impressões de marca (a validar)
 
 - Logo em formato de raio (lightning bolt), estilo minimalista
