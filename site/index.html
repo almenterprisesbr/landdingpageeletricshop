@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ElectricShop — Mobilidade Elétrica na Baixada Santista</title>
+
+<!-- ==========================================================================
+     SEO / Open Graph
+     ATENÇÃO: trocar a URL canônica e a imagem de compartilhamento quando o
+     domínio final estiver definido. Ver DADOS-A-PREENCHER.md
+     ========================================================================== -->
+<meta name="description" content="Motos e scooters elétricas com fabricação própria brasileira. Lojas em Santos e São Vicente, com oficina técnica própria integrada. Agende seu test-ride.">
+<meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://www.electricshop.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="ElectricShop — Mobilidade Elétrica na Baixada Santista">
+<meta property="og:description" content="Fabricação própria brasileira, oficina técnica integrada e duas lojas na Baixada Santista.">
+<meta property="og:site_name" content="ElectricShop">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23050505'/><path d='M56 8 26 54h18l-6 38 32-48H52z' fill='%23C8FF3D'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Acessibilidade: atalho para o conteúdo -->
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ====================== PRELOADER ====================== -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__mark">
+    <svg viewBox="0 0 100 100" width="46" height="46" aria-hidden="true"><path d="M56 8 26 54h18l-6 38 32-48H52z" fill="currentColor"/></svg>
+  </div>
+  <div class="preloader__bar"><span></span></div>
+</div>
+
+<!-- ====================== CURSOR (desktop) ====================== -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+
+<!-- ====================== HEADER ====================== -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#inicio" class="brand" aria-label="ElectricShop — página inicial">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" width="26" height="26"><path d="M56 8 26 54h18l-6 38 32-48H52z" fill="currentColor"/></svg>
+      </span>
+      <span class="brand__text">
+        <strong>ELECTRIC</strong> SHOP
+        <em>Mobilidade Elétrica</em>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#sobre">A empresa</a>
+      <a href="#produtos">Modelos</a>
+      <a href="#oficina">Oficina</a>
+      <a href="#fabricacao">Fabricação</a>
+      <a href="#lojas">Lojas</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#contato" class="btn btn--accent btn--sm">Agendar test-ride</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ====================== MENU MOBILE ====================== -->
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="Navegação mobile">
+    <a href="#sobre"><span>01</span> A empresa</a>
+    <a href="#produtos"><span>02</span> Modelos</a>
+    <a href="#oficina"><span>03</span> Oficina</a>
+    <a href="#fabricacao"><span>04</span> Fabricação</a>
+    <a href="#lojas"><span>05</span> Lojas</a>
+    <a href="#contato"><span>06</span> Contato</a>
+  </nav>
+  <a href="#contato" class="btn btn--accent btn--block">Agendar test-ride</a>
+</div>
+
+<main id="conteudo">
+
+<!-- ====================== HERO — VÍDEO DE FUNDO ====================== -->
+<section class="hero" id="inicio">
+  <div class="hero__media">
+    <!-- Vídeo principal definido pelo cliente. Autoplay + loop + mudo (exigência
+         dos navegadores para autoplay). Ver DADOS-A-PREENCHER.md sobre compressão. -->
+    <video class="hero__video" id="heroVideo"
+           autoplay muted loop playsinline preload="auto"
+           poster="assets/img/hero-poster.svg"
+           aria-hidden="true" tabindex="-1">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+  </div>
+
+  <div class="hero__content">
+    <p class="eyebrow reveal" data-delay="0">
+      <span class="pulse" aria-hidden="true"></span> Santos &amp; São Vicente — Baixada Santista
+    </p>
+
+    <h1 class="hero__title">
+      <span class="line reveal" data-delay="1">Mobilidade</span>
+      <span class="line reveal" data-delay="2">inteligente.</span>
+      <span class="line reveal accent" data-delay="3">Futuro sustentável.</span>
+    </h1>
+
+    <p class="hero__lead reveal" data-delay="4">
+      Motos e scooters elétricas com <strong>fabricação própria brasileira</strong>,
+      oficina técnica integrada e atendimento de quem entende do assunto.
+      Zero combustível, zero ruído, zero complicação.
+    </p>
+
+    <div class="hero__cta reveal" data-delay="5">
+      <a href="#contato" class="btn btn--accent btn--lg" data-cursor="Agendar">
+        Agendar test-ride
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#produtos" class="btn btn--ghost btn--lg">Ver os modelos</a>
+    </div>
+  </div>
+
+  <!-- Barra de credibilidade no rodapé do hero -->
+  <div class="hero__bar">
+    <div class="hero__bar-item"><strong>2</strong><span>lojas físicas</span></div>
+    <div class="hero__bar-item"><strong>100%</strong><span>elétrico</span></div>
+    <div class="hero__bar-item"><strong>Própria</strong><span>oficina técnica</span></div>
+    <div class="hero__bar-item"><strong>Brasil</strong><span>fabricação nacional</span></div>
+    <a href="#sobre" class="hero__scroll" aria-label="Rolar para o conteúdo">
+      <span class="hero__scroll-line" aria-hidden="true"></span> Role
+    </a>
+  </div>
+</section>
+
+<!-- ====================== TICKER ====================== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Fabricação brasileira</span><i>✦</i><span>Oficina própria integrada</span><i>✦</i>
+    <span>Santos</span><i>✦</i><span>São Vicente</span><i>✦</i><span>Zero emissão</span><i>✦</i>
+    <span>Test-ride gratuito</span><i>✦</i><span>Peças e assistência</span><i>✦</i>
+    <span>Fabricação brasileira</span><i>✦</i><span>Oficina própria integrada</span><i>✦</i>
+    <span>Santos</span><i>✦</i><span>São Vicente</span><i>✦</i><span>Zero emissão</span><i>✦</i>
+    <span>Test-ride gratuito</span><i>✦</i><span>Peças e assistência</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ====================== SOBRE — BENTO GRID ====================== -->
+<section class="section" id="sobre">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow"><span class="idx">01</span> A empresa</p>
+      <h2 class="h2">Não vendemos só veículos.<br><span class="dim">Entregamos autonomia.</span></h2>
+      <p class="section__lead">
+        A ElectricShop nasceu na Baixada Santista com uma ideia simples: se o futuro da
+        mobilidade é elétrico, ele precisa ser confiável, acessível e ter quem dê suporte
+        na porta ao lado. Por isso cada loja nossa tem uma oficina técnica integrada.
+      </p>
+    </header>
+
+    <div class="bento">
+      <!-- Card grande -->
+      <article class="bento__card bento__card--xl reveal" data-media="loja">
+        <div class="bento__media" aria-hidden="true"><div class="ph ph--loja"><span>Foto: fachada da loja ao anoitecer</span></div></div>
+        <div class="bento__body">
+          <span class="chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>O que é a ElectricShop?</h3>
+          <p>Mais que uma revenda: somos fabricante, loja e assistência técnica no mesmo endereço. Quem compra com a gente não fica na mão depois.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </div>
+      </article>
+
+      <!-- Card destaque acento -->
+      <article class="bento__card bento__card--accent reveal" data-delay="1">
+        <div class="bento__body">
+          <span class="chip chip--dark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M13 2 4 14h7l-1 8 9-12h-7z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Fabricação<br>própria brasileira</h3>
+          <p>Projeto e montagem nacionais. Isso significa reposição de peças mais rápida, custo menor e suporte que fala a sua língua.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </div>
+      </article>
+
+      <!-- Oficina -->
+      <article class="bento__card reveal" data-delay="2">
+        <div class="bento__media bento__media--sm" aria-hidden="true"><div class="ph ph--oficina"><span>Foto: oficina</span></div></div>
+        <div class="bento__body">
+          <span class="chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 1 5-5z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Oficina ao lado</h3>
+          <p>Revisão, bateria, garantia e peças — sem terceirizar, sem enrolação.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </div>
+      </article>
+
+      <!-- Showroom -->
+      <article class="bento__card bento__card--wide reveal" data-delay="3">
+        <div class="bento__media" aria-hidden="true"><div class="ph ph--showroom"><span>Foto: showroom interno</span></div></div>
+        <div class="bento__body">
+          <span class="chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Showroom para experimentar de verdade</h3>
+          <p>Scooters, motos, bikes e patinetes expostos com ficha técnica à vista. Suba, sinte o peso, faça o test-ride. Sem pressão de venda.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </div>
+      </article>
+
+      <!-- Economia -->
+      <article class="bento__card bento__card--stat reveal" data-delay="4">
+        <div class="bento__body">
+          <p class="stat__num"><span class="count" data-to="90" data-suffix="%">0%</span></p>
+          <h3>menos custo por km</h3>
+          <p>Comparado a uma moto a combustão no uso urbano. Recarga custa centavos.</p>
+          <small class="footnote">Estimativa de uso urbano — validar número final com a equipe.</small>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== NÚMEROS ====================== -->
+<section class="section section--tight numbers">
+  <div class="wrap">
+    <div class="numbers__grid">
+      <div class="numbers__item reveal">
+        <p class="numbers__num"><span class="count" data-to="2">0</span></p>
+        <h3>Lojas na Baixada</h3><p>Santos e São Vicente, ambas com oficina integrada.</p>
+      </div>
+      <div class="numbers__item reveal" data-delay="1">
+        <p class="numbers__num"><span class="count" data-to="6">0</span>+</p>
+        <h3>Categorias de veículo</h3><p>De patinete a maxi-scooter rodoviária.</p>
+      </div>
+      <div class="numbers__item reveal" data-delay="2">
+        <p class="numbers__num"><span class="count" data-to="100" data-suffix="%">0%</span></p>
+        <h3>Elétrico</h3><p>Zero emissão local, zero combustível, zero ruído.</p>
+      </div>
+      <div class="numbers__item reveal" data-delay="3">
+        <p class="numbers__num">R$<span class="count" data-to="0">0</span></p>
+        <h3>de IPVA*</h3><p>Veículos elétricos têm isenção ou desconto em SP.</p>
+        <small class="footnote">*Confirmar regra vigente com a equipe.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PRODUTOS ====================== -->
+<section class="section" id="produtos">
+  <div class="wrap">
+    <header class="section__head section__head--row reveal">
+      <div>
+        <p class="eyebrow"><span class="idx">02</span> Linha de modelos</p>
+        <h2 class="h2">Escolha pelo seu trajeto,<br><span class="dim">não pelo catálogo.</span></h2>
+      </div>
+      <p class="section__lead section__lead--side">
+        Cada modelo foi pensado para um tipo de uso. Filtre abaixo e compare —
+        e se ainda ficar em dúvida, a gente resolve no test-ride.
+      </p>
+    </header>
+
+    <!-- Filtros -->
+    <div class="filters reveal" role="tablist" aria-label="Filtrar modelos por categoria">
+      <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">Todos</button>
+      <button class="filter" role="tab" aria-selected="false" data-filter="scooter">Scooters</button>
+      <button class="filter" role="tab" aria-selected="false" data-filter="moto">Motos</button>
+      <button class="filter" role="tab" aria-selected="false" data-filter="bike">Bikes</button>
+      <button class="filter" role="tab" aria-selected="false" data-filter="patinete">Patinetes</button>
+    </div>
+
+    <!-- ATENÇÃO: nomes e fichas técnicas abaixo são PROVISÓRIOS.
+         Substituir pelos dados reais — ver DADOS-A-PREENCHER.md -->
+    <div class="products" id="products">
+
+      <article class="product reveal" data-cat="scooter">
+        <div class="product__badge">Mais vendido</div>
+        <div class="product__media"><div class="ph ph--prod"><span>Scooter cinza — perfil</span></div></div>
+        <div class="product__info">
+          <header><h3>ES Urbano</h3><p class="product__tag">Scooter · dia a dia</p></header>
+          <dl class="specs">
+            <div><dt>Autonomia</dt><dd>até 90 km</dd></div>
+            <div><dt>Velocidade</dt><dd>70 km/h</dd></div>
+            <div><dt>Recarga</dt><dd>4–6 h</dd></div>
+          </dl>
+          <div class="product__foot">
+            <p class="price">sob consulta</p>
+            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-cat="scooter" data-delay="1">
+        <div class="product__media"><div class="ph ph--prod"><span>Scooter azul + baú</span></div></div>
+        <div class="product__info">
+          <header><h3>ES City Plus</h3><p class="product__tag">Scooter · com baú</p></header>
+          <dl class="specs">
+            <div><dt>Autonomia</dt><dd>até 110 km</dd></div>
+            <div><dt>Velocidade</dt><dd>80 km/h</dd></div>
+            <div><dt>Recarga</dt><dd>4–6 h</dd></div>
+          </dl>
+          <div class="product__foot">
+            <p class="price">sob consulta</p>
+            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-cat="scooter" data-delay="2">
+        <div class="product__media"><div class="ph ph--prod"><span>Maxi-scooter verde</span></div></div>
+        <div class="product__info">
+          <header><h3>ES Max</h3><p class="product__tag">Maxi-scooter · rodoviária</p></header>
+          <dl class="specs">
+            <div><dt>Autonomia</dt><dd>até 140 km</dd></div>
+            <div><dt>Velocidade</dt><dd>100 km/h</dd></div>
+            <div><dt>Recarga</dt><dd>5–7 h</dd></div>
+          </dl>
+          <div class="product__foot">
+            <p class="price">sob consulta</p>
+            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-cat="moto">
+        <div class="product__media"><div class="ph ph--prod"><span>Moto elétrica trail</span></div></div>
+        <div class="product__info">
+          <header><h3>ES Trail</h3><p class="product__tag">Moto · off-road</p></header>
+          <dl class="specs">
+            <div><dt>Autonomia</dt><dd>até 80 km</dd></div>
+            <div><dt>Velocidade</dt><dd>90 km/h</dd></div>
+            <div><dt>Recarga</dt><dd>4–5 h</dd></div>
+          </dl>
+          <div class="product__foot">
+            <p class="price">sob consulta</p>
+            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-cat="bike" data-delay="1">
+        <div class="product__media"><div class="ph ph--prod"><span>Bicicleta elétrica</span></div></div>
+        <div class="product__info">
+          <header><h3>ES Bike</h3><p class="product__tag">Bicicleta · sem CNH</p></header>
+          <dl class="specs">
+            <div><dt>Autonomia</dt><dd>até 60 km</dd></div>
+            <div><dt>Velocidade</dt><dd>32 km/h</dd></div>
+            <div><dt>Recarga</dt><dd>3–4 h</dd></div>
+          </dl>
+          <div class="product__foot">
+            <p class="price">sob consulta</p>
+            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-cat="patinete" data-delay="2">
+        <div class="product__media"><div class="ph ph--prod"><span>Patinete elétrico</span></div></div>
+        <div class="product__info">
+          <header><h3>ES Kick</h3><p class="product__tag">Patinete · último quilômetro</p></header>
+          <dl class="specs">
+            <div><dt>Autonomia</dt><dd>até 40 km</dd></div>
+            <div><dt>Velocidade</dt><dd>25 km/h</dd></div>
+            <div><dt>Recarga</dt><dd>3–4 h</dd></div>
+          </dl>
+          <div class="product__foot">
+            <p class="price">sob consulta</p>
+            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="products__note reveal">
+      Fichas técnicas completas e condições de pagamento você recebe no atendimento —
+      <a href="#contato">fale com a gente</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ====================== OFICINA ====================== -->
+<section class="section split" id="oficina">
+  <div class="wrap split__grid">
+    <div class="split__media reveal">
+      <video class="split__video" muted loop playsinline preload="metadata"
+             poster="assets/img/oficina-poster.svg" data-lazyvideo aria-label="Técnico realizando manutenção em uma scooter na oficina">
+        <source src="assets/video/oficina.mp4" type="video/mp4">
+      </video>
+      <div class="split__quote"><p>“Manutenção de excelência.<br><span class="accent">Segurança garantida.</span>”</p></div>
+    </div>
+
+    <div class="split__body">
+      <p class="eyebrow reveal"><span class="idx">03</span> Oficina própria</p>
+      <h2 class="h2 reveal">O pós-venda que<br><span class="dim">ninguém te dá.</span></h2>
+      <p class="section__lead reveal">
+        O maior medo de quem compra elétrico é ficar sem assistência. Aqui esse
+        problema não existe: a oficina fica <strong>na porta ao lado da loja</strong>,
+        com equipe treinada nos nossos próprios veículos.
+      </p>
+
+      <ul class="checklist">
+        <li class="reveal"><span aria-hidden="true">✓</span><div><strong>Revisão preventiva</strong><p>Checklist completo de freios, suspensão, pneus e sistema elétrico.</p></div></li>
+        <li class="reveal" data-delay="1"><span aria-hidden="true">✓</span><div><strong>Diagnóstico de bateria e motor</strong><p>Leitura eletrônica do BMS, controlador e células.</p></div></li>
+        <li class="reveal" data-delay="2"><span aria-hidden="true">✓</span><div><strong>Garantia de fábrica</strong><p>Atendida por nós mesmos, sem intermediário e sem fila.</p></div></li>
+        <li class="reveal" data-delay="3"><span aria-hidden="true">✓</span><div><strong>Peças e acessórios originais</strong><p>Estoque local — sem esperar importação.</p></div></li>
+      </ul>
+
+      <a href="#contato" class="btn btn--accent reveal">Agendar uma revisão</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FABRICAÇÃO ====================== -->
+<section class="section fab" id="fabricacao">
+  <div class="wrap">
+    <header class="section__head section__head--center reveal">
+      <p class="eyebrow"><span class="idx">04</span> Fabricação nacional</p>
+      <h2 class="h2">Projetado e montado<br><span class="accent">aqui no Brasil.</span></h2>
+      <p class="section__lead section__lead--center">
+        Não somos apenas importadores com adesivo. Produzimos — e é isso que
+        muda a sua experiência depois da compra.
+      </p>
+    </header>
+
+    <div class="fab__grid">
+      <article class="fab__card reveal">
+        <span class="fab__n">01</span>
+        <h3>Peça de reposição sem espera</h3>
+        <p>Componente nacional chega em dias, não em meses. Sua moto não fica parada aguardando contêiner.</p>
+      </article>
+      <article class="fab__card reveal" data-delay="1">
+        <span class="fab__n">02</span>
+        <h3>Suporte técnico de verdade</h3>
+        <p>Quem monta é quem conserta. Nossa equipe conhece o veículo por dentro, parafuso por parafuso.</p>
+      </article>
+      <article class="fab__card reveal" data-delay="2">
+        <span class="fab__n">03</span>
+        <h3>Projetado para o Brasil</h3>
+        <p>Calibrado para a nossa realidade: calor, umidade do litoral, maresia e o asfalto que a gente conhece.</p>
+      </article>
+      <article class="fab__card reveal" data-delay="3">
+        <span class="fab__n">04</span>
+        <h3>Preço sem imposto de importação</h3>
+        <p>Produção local corta a cadeia de custo — e isso aparece na etiqueta.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== LOJAS ====================== -->
+<section class="section" id="lojas">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow"><span class="idx">05</span> Onde nos encontrar</p>
+      <h2 class="h2">Duas lojas.<br><span class="dim">Duas oficinas.</span></h2>
+    </header>
+
+    <div class="stores">
+      <!-- ATENÇÃO: endereços, telefones e horários são PLACEHOLDERS. -->
+      <article class="store reveal">
+        <div class="store__media"><div class="ph ph--loja"><span>Foto: loja Santos</span></div></div>
+        <div class="store__body">
+          <h3>Santos</h3>
+          <p class="store__addr" data-placeholder>Av. Exemplo, 000 — Gonzaga<br>Santos / SP — CEP 00000-000</p>
+          <dl class="store__meta">
+            <div><dt>Loja</dt><dd data-placeholder>Seg a Sex 9h–18h · Sáb 9h–13h</dd></div>
+            <div><dt>Oficina</dt><dd data-placeholder>Seg a Sex 8h–18h</dd></div>
+          </dl>
+          <div class="store__actions">
+            <a class="btn btn--accent btn--sm" href="#contato">Falar com a loja</a>
+            <a class="btn btn--ghost btn--sm" href="#contato">Como chegar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="store reveal" data-delay="1">
+        <div class="store__media"><div class="ph ph--loja"><span>Foto: loja São Vicente</span></div></div>
+        <div class="store__body">
+          <h3>São Vicente</h3>
+          <p class="store__addr" data-placeholder>Av. Exemplo, 000 — Centro<br>São Vicente / SP — CEP 00000-000</p>
+          <dl class="store__meta">
+            <div><dt>Loja</dt><dd data-placeholder>Seg a Sex 9h–18h · Sáb 9h–13h</dd></div>
+            <div><dt>Oficina</dt><dd data-placeholder>Seg a Sex 8h–18h</dd></div>
+          </dl>
+          <div class="store__actions">
+            <a class="btn btn--accent btn--sm" href="#contato">Falar com a loja</a>
+            <a class="btn btn--ghost btn--sm" href="#contato">Como chegar</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== DEPOIMENTOS ====================== -->
+<section class="section testi">
+  <div class="wrap">
+    <header class="section__head section__head--center reveal">
+      <p class="eyebrow">Quem já trocou</p>
+      <h2 class="h2">Histórias de quem<br><span class="dim">não volta atrás.</span></h2>
+      <p class="footnote">Depoimentos ilustrativos — substituir por avaliações reais de clientes.</p>
+    </header>
+
+    <div class="testi__grid">
+      <figure class="testi__card reveal">
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote><p>Uso todo dia pra ir do Gonzaga ao trabalho. Economizo mais de R$ 300 por mês de combustível e nunca mais entrei em fila de posto.</p></blockquote>
+        <figcaption><strong>Cliente ElectricShop</strong><span>Santos / SP</span></figcaption>
+      </figure>
+      <figure class="testi__card reveal" data-delay="1">
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote><p>O que me convenceu foi a oficina ao lado. Comprei tranquilo sabendo que, se der qualquer coisa, é só atravessar a porta.</p></blockquote>
+        <figcaption><strong>Cliente ElectricShop</strong><span>São Vicente / SP</span></figcaption>
+      </figure>
+      <figure class="testi__card reveal" data-delay="2">
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote><p>Atendimento sem empurrar venda. Me deixaram testar, explicaram tudo sobre bateria e autonomia. Saí decidido.</p></blockquote>
+        <figcaption><strong>Cliente ElectricShop</strong><span>Baixada Santista</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FAQ ====================== -->
+<section class="section faq">
+  <div class="wrap faq__grid">
+    <header class="reveal">
+      <p class="eyebrow"><span class="idx">06</span> Dúvidas frequentes</p>
+      <h2 class="h2">Antes de você<br><span class="dim">perguntar.</span></h2>
+      <p class="section__lead">Não achou a sua? <a href="#contato">Manda pra gente</a> — respondemos rápido.</p>
+    </header>
+
+    <div class="accordion">
+      <details class="acc reveal">
+        <summary><span>Preciso de CNH para andar de moto elétrica?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Depende do modelo. Bicicletas elétricas e patinetes dentro dos limites legais dispensam habilitação. Já scooters e motos com maior velocidade seguem a mesma regra de veículos a combustão e exigem CNH categoria A. Na loja a gente te orienta modelo por modelo.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="1">
+        <summary><span>Quanto custa carregar? Dá pra usar tomada comum?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Sim, carrega em tomada residencial comum (110V/220V). O custo de uma recarga completa fica na casa de poucos reais — muito abaixo de um tanque de gasolina para a mesma distância.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="2">
+        <summary><span>Qual a durabilidade da bateria?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>As baterias de lítio são especificadas para centenas de ciclos completos de carga mantendo boa capacidade. Nossa oficina faz diagnóstico periódico e trabalha com reposição — você não fica refém do fabricante.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="3">
+        <summary><span>Pode pegar chuva e maresia?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Sim. Os veículos são vedados para uso urbano em dias de chuva. Como somos da Baixada, projetamos pensando na maresia — e na revisão a gente reforça a proteção dos contatos elétricos.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="4">
+        <summary><span>Vocês fazem test-ride?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Fazemos, e é gratuito. Agende pelo formulário abaixo ou apareça em uma das lojas. Vale a pena sentir o torque elétrico antes de decidir.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="5">
+        <summary><span>Como funciona a garantia?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Garantia de fábrica atendida diretamente na nossa oficina, sem intermediários. Como fabricamos, o processo é resolvido internamente — mais rápido do que enviar para terceiros.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONTATO / CTA ====================== -->
+<section class="section cta" id="contato">
+  <div class="wrap cta__grid">
+    <div class="cta__body">
+      <p class="eyebrow reveal">Vamos combinar</p>
+      <h2 class="h2 reveal">Marque seu test-ride.<br><span class="accent">É por nossa conta.</span></h2>
+      <p class="section__lead reveal">
+        Preencha e a equipe da loja mais próxima entra em contato para combinar
+        dia e horário. Sem compromisso de compra.
+      </p>
+
+      <ul class="cta__contacts reveal">
+        <li>
+          <span class="cta__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div><strong>WhatsApp</strong><p data-placeholder>(13) 90000-0000</p></div>
+        </li>
+        <li>
+          <span class="cta__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div><strong>E-mail</strong><p data-placeholder>contato@electricshop.com.br</p></div>
+        </li>
+        <li>
+          <span class="cta__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          </span>
+          <div><strong>Lojas</strong><p>Santos e São Vicente — SP</p></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Formulário: sem back-end. Ver DADOS-A-PREENCHER.md para integrar. -->
+    <form class="form reveal" id="form" novalidate>
+      <div class="field">
+        <label for="nome">Nome completo</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="Como podemos te chamar?">
+        <p class="field__err" data-err></p>
+      </div>
+
+      <div class="field">
+        <label for="tel">WhatsApp</label>
+        <input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(13) 90000-0000">
+        <p class="field__err" data-err></p>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail <span class="opt">(opcional)</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@email.com">
+        <p class="field__err" data-err></p>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="loja">Loja de preferência</label>
+          <select id="loja" name="loja" required>
+            <option value="">Selecione…</option>
+            <option>Santos</option>
+            <option>São Vicente</option>
+            <option>Tanto faz</option>
+          </select>
+          <p class="field__err" data-err></p>
+        </div>
+        <div class="field">
+          <label for="interesse">Interesse</label>
+          <select id="interesse" name="interesse" required>
+            <option value="">Selecione…</option>
+            <option>Scooter elétrica</option>
+            <option>Moto elétrica</option>
+            <option>Bicicleta elétrica</option>
+            <option>Patinete elétrico</option>
+            <option>Serviço de oficina</option>
+          </select>
+          <p class="field__err" data-err></p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="msg">Mensagem <span class="opt">(opcional)</span></label>
+        <textarea id="msg" name="msg" rows="3" placeholder="Conta pra gente como você pretende usar o veículo."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--accent btn--block btn--lg">
+        Quero agendar meu test-ride
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <p class="form__note">Ao enviar, você concorda em ser contatado pela nossa equipe. Não enviamos spam.</p>
+      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="#inicio" class="brand brand--lg" aria-label="ElectricShop — topo da página">
+          <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 100 100" width="30" height="30"><path d="M56 8 26 54h18l-6 38 32-48H52z" fill="currentColor"/></svg></span>
+          <span class="brand__text"><strong>ELECTRIC</strong> SHOP<em>Mobilidade Elétrica</em></span>
+        </a>
+        <p>Mobilidade elétrica com fabricação própria brasileira, showroom e oficina técnica integrada na Baixada Santista.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram da ElectricShop"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7" fill="none"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook da ElectricShop"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M14 8h2.5V4.5H14c-2.2 0-4 1.8-4 4V11H7.5v3.5H10V21h3.5v-6.5H16l.5-3.5h-3V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="WhatsApp da ElectricShop"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-6.9-6c-.5-.9-.8-1.8-.4-2.6.2-.4.6-.9 1-1 .2-.1.6-.1.8 0 .2 0 .4.1.6.5l.7 1.6c.1.2 0 .5-.1.7l-.4.5c-.1.2-.2.4 0 .6a9 9 0 0 0 3.4 2.9c.3.1.5.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.7.8c.2.1.4.3.4.5s0 .6-.1.8z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer__col" aria-label="Navegação do rodapé">
+        <h4>Navegue</h4>
+        <a href="#sobre">A empresa</a><a href="#produtos">Modelos</a><a href="#oficina">Oficina</a>
+        <a href="#fabricacao">Fabricação</a><a href="#lojas">Lojas</a>
+      </nav>
+
+      <div class="footer__col">
+        <h4>Lojas</h4>
+        <p data-placeholder>Santos — Av. Exemplo, 000<br>Gonzaga, Santos/SP</p>
+        <p data-placeholder>São Vicente — Av. Exemplo, 000<br>Centro, São Vicente/SP</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <p data-placeholder>(13) 90000-0000</p>
+        <p data-placeholder>contato@electricshop.com.br</p>
+        <a href="#contato" class="btn btn--accent btn--sm">Agendar test-ride</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span id="year">2026</span> ElectricShop — Mobilidade Elétrica. Todos os direitos reservados.</p>
+      <p data-placeholder>CNPJ 00.000.000/0001-00</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a class="wa" href="#contato" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-6.9-6c-.5-.9-.8-1.8-.4-2.6.2-.4.6-.9 1-1 .2-.1.6-.1.8 0 .2 0 .4.1.6.5l.7 1.6c.1.2 0 .5-.1.7l-.4.5c-.1.2-.2.4 0 .6a9 9 0 0 0 3.4 2.9c.3.1.5.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.7.8c.2.1.4.3.4.5s0 .6-.1.8z" fill="currentColor"/></svg>
+  <span class="wa__label">Fale com a gente</span>
+</a>
+
+<!-- Barra de progresso de leitura -->
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
