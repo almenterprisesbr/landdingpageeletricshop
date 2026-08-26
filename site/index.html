@@ -269,8 +269,8 @@
       </p>
     </header>
 
-    <!-- Filtros -->
-    <div class="filters reveal" role="tablist" aria-label="Filtrar modelos por categoria">
+    <!-- Atalhos — pulam o carrossel para o primeiro modelo da categoria -->
+    <div class="filters reveal" role="tablist" aria-label="Ir para categoria de modelo">
       <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">Todos</button>
       <button class="filter" role="tab" aria-selected="false" data-filter="scooter">Scooters</button>
       <button class="filter" role="tab" aria-selected="false" data-filter="moto">Motos</button>
@@ -278,106 +278,167 @@
       <button class="filter" role="tab" aria-selected="false" data-filter="patinete">Patinetes</button>
     </div>
 
-    <!-- ATENÇÃO: nomes e fichas técnicas abaixo são PROVISÓRIOS.
+    <!-- Carrossel 3D (coverflow) dos modelos.
+         ATENÇÃO: nomes e fichas técnicas abaixo são PROVISÓRIOS.
          Substituir pelos dados reais — ver DADOS-A-PREENCHER.md -->
-    <div class="products" id="products">
+    <div class="coverflow reveal" id="coverflow" role="region" aria-roledescription="carrossel" aria-label="Modelos ElectricShop">
+      <div class="coverflow__stage" id="coverflowStage">
 
-      <article class="product reveal" data-cat="scooter">
-        <div class="product__badge">Mais vendido</div>
-        <div class="product__media"><div class="ph ph--prod"><span>Scooter cinza — perfil</span></div></div>
-        <div class="product__info">
-          <header><h3>ES Urbano</h3><p class="product__tag">Scooter · dia a dia</p></header>
-          <dl class="specs">
-            <div><dt>Autonomia</dt><dd>até 90 km</dd></div>
-            <div><dt>Velocidade</dt><dd>70 km/h</dd></div>
-            <div><dt>Recarga</dt><dd>4–6 h</dd></div>
-          </dl>
-          <div class="product__foot">
-            <p class="price">sob consulta</p>
-            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+        <article class="coverflow__card" data-cat="scooter" data-index="0">
+          <div class="coverflow__media"><div class="ph ph--prod"><span>Scooter cinza — perfil</span></div></div>
+          <div class="coverflow__scrim" aria-hidden="true"></div>
+          <div class="coverflow__body">
+            <div class="coverflow__top">
+              <span class="coverflow__badge">Mais vendido</span>
+              <span class="coverflow__tag">Scooter · dia a dia</span>
+            </div>
+            <div class="coverflow__bottom">
+              <h3>ES Urbano</h3>
+              <dl class="specs specs--coverflow">
+                <div><dt>Autonomia</dt><dd>até 90 km</dd></div>
+                <div><dt>Velocidade</dt><dd>70 km/h</dd></div>
+                <div><dt>Recarga</dt><dd>4–6 h</dd></div>
+              </dl>
+              <div class="coverflow__foot">
+                <p class="price">sob consulta</p>
+                <a class="btn btn--accent btn--sm" href="#contato" tabindex="-1">Tenho interesse</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="product reveal" data-cat="scooter" data-delay="1">
-        <div class="product__media"><div class="ph ph--prod"><span>Scooter azul + baú</span></div></div>
-        <div class="product__info">
-          <header><h3>ES City Plus</h3><p class="product__tag">Scooter · com baú</p></header>
-          <dl class="specs">
-            <div><dt>Autonomia</dt><dd>até 110 km</dd></div>
-            <div><dt>Velocidade</dt><dd>80 km/h</dd></div>
-            <div><dt>Recarga</dt><dd>4–6 h</dd></div>
-          </dl>
-          <div class="product__foot">
-            <p class="price">sob consulta</p>
-            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+        <article class="coverflow__card" data-cat="scooter" data-index="1">
+          <div class="coverflow__media"><div class="ph ph--prod"><span>Scooter azul + baú</span></div></div>
+          <div class="coverflow__scrim" aria-hidden="true"></div>
+          <div class="coverflow__body">
+            <div class="coverflow__top">
+              <span></span>
+              <span class="coverflow__tag">Scooter · com baú</span>
+            </div>
+            <div class="coverflow__bottom">
+              <h3>ES City Plus</h3>
+              <dl class="specs specs--coverflow">
+                <div><dt>Autonomia</dt><dd>até 110 km</dd></div>
+                <div><dt>Velocidade</dt><dd>80 km/h</dd></div>
+                <div><dt>Recarga</dt><dd>4–6 h</dd></div>
+              </dl>
+              <div class="coverflow__foot">
+                <p class="price">sob consulta</p>
+                <a class="btn btn--accent btn--sm" href="#contato" tabindex="-1">Tenho interesse</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="product reveal" data-cat="scooter" data-delay="2">
-        <div class="product__media"><div class="ph ph--prod"><span>Maxi-scooter verde</span></div></div>
-        <div class="product__info">
-          <header><h3>ES Max</h3><p class="product__tag">Maxi-scooter · rodoviária</p></header>
-          <dl class="specs">
-            <div><dt>Autonomia</dt><dd>até 140 km</dd></div>
-            <div><dt>Velocidade</dt><dd>100 km/h</dd></div>
-            <div><dt>Recarga</dt><dd>5–7 h</dd></div>
-          </dl>
-          <div class="product__foot">
-            <p class="price">sob consulta</p>
-            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+        <article class="coverflow__card" data-cat="scooter" data-index="2">
+          <div class="coverflow__media"><div class="ph ph--prod"><span>Maxi-scooter verde</span></div></div>
+          <div class="coverflow__scrim" aria-hidden="true"></div>
+          <div class="coverflow__body">
+            <div class="coverflow__top">
+              <span></span>
+              <span class="coverflow__tag">Maxi-scooter · rodoviária</span>
+            </div>
+            <div class="coverflow__bottom">
+              <h3>ES Max</h3>
+              <dl class="specs specs--coverflow">
+                <div><dt>Autonomia</dt><dd>até 140 km</dd></div>
+                <div><dt>Velocidade</dt><dd>100 km/h</dd></div>
+                <div><dt>Recarga</dt><dd>5–7 h</dd></div>
+              </dl>
+              <div class="coverflow__foot">
+                <p class="price">sob consulta</p>
+                <a class="btn btn--accent btn--sm" href="#contato" tabindex="-1">Tenho interesse</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="product reveal" data-cat="moto">
-        <div class="product__media"><div class="ph ph--prod"><span>Moto elétrica trail</span></div></div>
-        <div class="product__info">
-          <header><h3>ES Trail</h3><p class="product__tag">Moto · off-road</p></header>
-          <dl class="specs">
-            <div><dt>Autonomia</dt><dd>até 80 km</dd></div>
-            <div><dt>Velocidade</dt><dd>90 km/h</dd></div>
-            <div><dt>Recarga</dt><dd>4–5 h</dd></div>
-          </dl>
-          <div class="product__foot">
-            <p class="price">sob consulta</p>
-            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+        <article class="coverflow__card" data-cat="moto" data-index="3">
+          <div class="coverflow__media"><div class="ph ph--prod"><span>Moto elétrica trail</span></div></div>
+          <div class="coverflow__scrim" aria-hidden="true"></div>
+          <div class="coverflow__body">
+            <div class="coverflow__top">
+              <span></span>
+              <span class="coverflow__tag">Moto · off-road</span>
+            </div>
+            <div class="coverflow__bottom">
+              <h3>ES Trail</h3>
+              <dl class="specs specs--coverflow">
+                <div><dt>Autonomia</dt><dd>até 80 km</dd></div>
+                <div><dt>Velocidade</dt><dd>90 km/h</dd></div>
+                <div><dt>Recarga</dt><dd>4–5 h</dd></div>
+              </dl>
+              <div class="coverflow__foot">
+                <p class="price">sob consulta</p>
+                <a class="btn btn--accent btn--sm" href="#contato" tabindex="-1">Tenho interesse</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="product reveal" data-cat="bike" data-delay="1">
-        <div class="product__media"><div class="ph ph--prod"><span>Bicicleta elétrica</span></div></div>
-        <div class="product__info">
-          <header><h3>ES Bike</h3><p class="product__tag">Bicicleta · sem CNH</p></header>
-          <dl class="specs">
-            <div><dt>Autonomia</dt><dd>até 60 km</dd></div>
-            <div><dt>Velocidade</dt><dd>32 km/h</dd></div>
-            <div><dt>Recarga</dt><dd>3–4 h</dd></div>
-          </dl>
-          <div class="product__foot">
-            <p class="price">sob consulta</p>
-            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+        <article class="coverflow__card" data-cat="bike" data-index="4">
+          <div class="coverflow__media"><div class="ph ph--prod"><span>Bicicleta elétrica</span></div></div>
+          <div class="coverflow__scrim" aria-hidden="true"></div>
+          <div class="coverflow__body">
+            <div class="coverflow__top">
+              <span></span>
+              <span class="coverflow__tag">Bicicleta · sem CNH</span>
+            </div>
+            <div class="coverflow__bottom">
+              <h3>ES Bike</h3>
+              <dl class="specs specs--coverflow">
+                <div><dt>Autonomia</dt><dd>até 60 km</dd></div>
+                <div><dt>Velocidade</dt><dd>32 km/h</dd></div>
+                <div><dt>Recarga</dt><dd>3–4 h</dd></div>
+              </dl>
+              <div class="coverflow__foot">
+                <p class="price">sob consulta</p>
+                <a class="btn btn--accent btn--sm" href="#contato" tabindex="-1">Tenho interesse</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="product reveal" data-cat="patinete" data-delay="2">
-        <div class="product__media"><div class="ph ph--prod"><span>Patinete elétrico</span></div></div>
-        <div class="product__info">
-          <header><h3>ES Kick</h3><p class="product__tag">Patinete · último quilômetro</p></header>
-          <dl class="specs">
-            <div><dt>Autonomia</dt><dd>até 40 km</dd></div>
-            <div><dt>Velocidade</dt><dd>25 km/h</dd></div>
-            <div><dt>Recarga</dt><dd>3–4 h</dd></div>
-          </dl>
-          <div class="product__foot">
-            <p class="price">sob consulta</p>
-            <a class="btn btn--ghost btn--sm" href="#contato">Tenho interesse</a>
+        <article class="coverflow__card" data-cat="patinete" data-index="5">
+          <div class="coverflow__media"><div class="ph ph--prod"><span>Patinete elétrico</span></div></div>
+          <div class="coverflow__scrim" aria-hidden="true"></div>
+          <div class="coverflow__body">
+            <div class="coverflow__top">
+              <span></span>
+              <span class="coverflow__tag">Patinete · último quilômetro</span>
+            </div>
+            <div class="coverflow__bottom">
+              <h3>ES Kick</h3>
+              <dl class="specs specs--coverflow">
+                <div><dt>Autonomia</dt><dd>até 40 km</dd></div>
+                <div><dt>Velocidade</dt><dd>25 km/h</dd></div>
+                <div><dt>Recarga</dt><dd>3–4 h</dd></div>
+              </dl>
+              <div class="coverflow__foot">
+                <p class="price">sob consulta</p>
+                <a class="btn btn--accent btn--sm" href="#contato" tabindex="-1">Tenho interesse</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+
+      </div>
+
+      <button class="coverflow__nav coverflow__nav--prev" id="cfPrev" aria-label="Modelo anterior" type="button">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="coverflow__nav coverflow__nav--next" id="cfNext" aria-label="Próximo modelo" type="button">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="coverflow__dots" id="cfDots" role="tablist" aria-label="Selecionar modelo">
+        <button class="cf-dot is-active" data-index="0" role="tab" aria-selected="true" aria-label="ES Urbano" type="button"></button>
+        <button class="cf-dot" data-index="1" role="tab" aria-selected="false" aria-label="ES City Plus" type="button"></button>
+        <button class="cf-dot" data-index="2" role="tab" aria-selected="false" aria-label="ES Max" type="button"></button>
+        <button class="cf-dot" data-index="3" role="tab" aria-selected="false" aria-label="ES Trail" type="button"></button>
+        <button class="cf-dot" data-index="4" role="tab" aria-selected="false" aria-label="ES Bike" type="button"></button>
+        <button class="cf-dot" data-index="5" role="tab" aria-selected="false" aria-label="ES Kick" type="button"></button>
+      </div>
     </div>
 
     <p class="products__note reveal">
@@ -510,22 +571,149 @@
       <p class="footnote">Depoimentos ilustrativos — substituir por avaliações reais de clientes.</p>
     </header>
 
-    <div class="testi__grid">
-      <figure class="testi__card reveal">
-        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-        <blockquote><p>Uso todo dia pra ir do Gonzaga ao trabalho. Economizo mais de R$ 300 por mês de combustível e nunca mais entrei em fila de posto.</p></blockquote>
-        <figcaption><strong>Cliente ElectricShop</strong><span>Santos / SP</span></figcaption>
-      </figure>
-      <figure class="testi__card reveal" data-delay="1">
-        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-        <blockquote><p>O que me convenceu foi a oficina ao lado. Comprei tranquilo sabendo que, se der qualquer coisa, é só atravessar a porta.</p></blockquote>
-        <figcaption><strong>Cliente ElectricShop</strong><span>São Vicente / SP</span></figcaption>
-      </figure>
-      <figure class="testi__card reveal" data-delay="2">
-        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-        <blockquote><p>Atendimento sem empurrar venda. Me deixaram testar, explicaram tudo sobre bateria e autonomia. Saí decidido.</p></blockquote>
-        <figcaption><strong>Cliente ElectricShop</strong><span>Baixada Santista</span></figcaption>
-      </figure>
+    <!-- Colunas com rolagem vertical contínua (efeito "marquee").
+         ATENÇÃO: os 12 depoimentos abaixo são ILUSTRATIVOS — nomes e falas
+         fictícios, escritos para mostrar como a seção fica preenchida.
+         Substituir pelos depoimentos reais dos clientes (com autorização
+         deles para usar nome/cidade) antes de publicar. -->
+    <div class="testi-columns reveal" aria-label="Depoimentos de clientes">
+
+      <div class="testi-col" style="--dur:28s">
+        <div class="testi-col__track">
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Uso todo dia pra ir do Gonzaga ao trabalho. Economizo mais de R$ 300 por mês de combustível e nunca mais entrei em fila de posto.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">RN</span><div><strong>Rafael Nunes</strong><span>Gonzaga, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>O que me convenceu foi a oficina ao lado. Comprei tranquilo sabendo que, se der qualquer coisa, é só atravessar a porta.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">CD</span><div><strong>Camila Duarte</strong><span>Centro, São Vicente/SP</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Sou entregador e troquei a moto a combustão pela ES Urbano. Recarrego durante o almoço e economizo o dia inteiro.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">EF</span><div><strong>Eduardo Ferraz</strong><span>Boqueirão, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Comprei a bike elétrica pra não precisar de habilitação. Leve, silenciosa e dá pra subir o Monte Serrat sem suar a camisa.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">JP</span><div><strong>Juliana Prado</strong><span>Embaré, Santos/SP</span></div></footer>
+          </article>
+          <!-- duplicado para o loop ficar contínuo -->
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Uso todo dia pra ir do Gonzaga ao trabalho. Economizo mais de R$ 300 por mês de combustível e nunca mais entrei em fila de posto.</p></blockquote>
+            <footer><span class="testi-avatar">RN</span><div><strong>Rafael Nunes</strong><span>Gonzaga, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>O que me convenceu foi a oficina ao lado. Comprei tranquilo sabendo que, se der qualquer coisa, é só atravessar a porta.</p></blockquote>
+            <footer><span class="testi-avatar">CD</span><div><strong>Camila Duarte</strong><span>Centro, São Vicente/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Sou entregador e troquei a moto a combustão pela ES Urbano. Recarrego durante o almoço e economizo o dia inteiro.</p></blockquote>
+            <footer><span class="testi-avatar">EF</span><div><strong>Eduardo Ferraz</strong><span>Boqueirão, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Comprei a bike elétrica pra não precisar de habilitação. Leve, silenciosa e dá pra subir o Monte Serrat sem suar a camisa.</p></blockquote>
+            <footer><span class="testi-avatar">JP</span><div><strong>Juliana Prado</strong><span>Embaré, Santos/SP</span></div></footer>
+          </article>
+        </div>
+      </div>
+
+      <div class="testi-col testi-col--md" style="--dur:34s">
+        <div class="testi-col__track">
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Atendimento sem empurrar venda. Me deixaram testar, explicaram tudo sobre bateria e autonomia. Saí decidido.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">MV</span><div><strong>Marcos Vinícius</strong><span>Baixada Santista</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Andava com medo de moto grande. A scooter é leve, banco baixo, freio suave. Me senti segura desde o primeiro test-ride.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">BL</span><div><strong>Beatriz Lemos</strong><span>Itararé, São Vicente/SP</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Comparei o gasto de manutenção com minha moto antiga: óleo, vela, corrente. Na elétrica só troco pastilha de freio de vez em quando.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">TR</span><div><strong>Thiago Ramalho</strong><span>Aparecida, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Fabricação nacional pesou na decisão. Se precisar de peça, não fico esperando importação chegar do outro lado do mundo.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">DS</span><div><strong>Diego Salgado</strong><span>Vila Rica, São Vicente/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Atendimento sem empurrar venda. Me deixaram testar, explicaram tudo sobre bateria e autonomia. Saí decidido.</p></blockquote>
+            <footer><span class="testi-avatar">MV</span><div><strong>Marcos Vinícius</strong><span>Baixada Santista</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Andava com medo de moto grande. A scooter é leve, banco baixo, freio suave. Me senti segura desde o primeiro test-ride.</p></blockquote>
+            <footer><span class="testi-avatar">BL</span><div><strong>Beatriz Lemos</strong><span>Itararé, São Vicente/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Comparei o gasto de manutenção com minha moto antiga: óleo, vela, corrente. Na elétrica só troco pastilha de freio de vez em quando.</p></blockquote>
+            <footer><span class="testi-avatar">TR</span><div><strong>Thiago Ramalho</strong><span>Aparecida, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Fabricação nacional pesou na decisão. Se precisar de peça, não fico esperando importação chegar do outro lado do mundo.</p></blockquote>
+            <footer><span class="testi-avatar">DS</span><div><strong>Diego Salgado</strong><span>Vila Rica, São Vicente/SP</span></div></footer>
+          </article>
+        </div>
+      </div>
+
+      <div class="testi-col testi-col--lg" style="--dur:31s">
+        <div class="testi-col__track">
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Moro perto da praia e uso o patinete pra ir até a orla. Cabe no porta-malas e carrega rápido enquanto eu tomo café.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">PW</span><div><strong>Patrícia Wagner</strong><span>José Menino, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>O silêncio é o que mais gosto. Chego em casa de madrugada depois do plantão sem acordar ninguém no prédio.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">RB</span><div><strong>Rodrigo Bittencourt</strong><span>Catiapoã, São Vicente/SP</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Levei pra revisão pensando que ia demorar dias. Fizeram na hora porque a oficina é da própria loja. Isso não tem preço.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">AC</span><div><strong>Ana Beatriz Correia</strong><span>Vila Belmiro, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card">
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote><p>Pesquisei bastante antes de decidir. Foi a única loja da região que fabrica aqui e ainda dá suporte técnico de verdade.</p></blockquote>
+            <footer><span class="testi-avatar" aria-hidden="true">LM</span><div><strong>Larissa Monteiro</strong><span>Gonzaga, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Moro perto da praia e uso o patinete pra ir até a orla. Cabe no porta-malas e carrega rápido enquanto eu tomo café.</p></blockquote>
+            <footer><span class="testi-avatar">PW</span><div><strong>Patrícia Wagner</strong><span>José Menino, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>O silêncio é o que mais gosto. Chego em casa de madrugada depois do plantão sem acordar ninguém no prédio.</p></blockquote>
+            <footer><span class="testi-avatar">RB</span><div><strong>Rodrigo Bittencourt</strong><span>Catiapoã, São Vicente/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Levei pra revisão pensando que ia demorar dias. Fizeram na hora porque a oficina é da própria loja. Isso não tem preço.</p></blockquote>
+            <footer><span class="testi-avatar">AC</span><div><strong>Ana Beatriz Correia</strong><span>Vila Belmiro, Santos/SP</span></div></footer>
+          </article>
+          <article class="testi-card" aria-hidden="true">
+            <div class="stars">★★★★★</div>
+            <blockquote><p>Pesquisei bastante antes de decidir. Foi a única loja da região que fabrica aqui e ainda dá suporte técnico de verdade.</p></blockquote>
+            <footer><span class="testi-avatar">LM</span><div><strong>Larissa Monteiro</strong><span>Gonzaga, Santos/SP</span></div></footer>
+          </article>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

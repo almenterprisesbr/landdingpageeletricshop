@@ -180,33 +180,149 @@
   })();
 
   /* ---------------------------------------------------------------------
-     7. FILTRO DE PRODUTOS
+     7. COVERFLOW — carrossel 3D dos modelos
+     Adaptação em JS puro do padrão "coverflow" (cards em arco, o do centro
+     em destaque). Cada card recebe transform/opacity/filter/z-index direto
+     via style — a única coisa que o CSS define é a transição (.coverflow__card).
      --------------------------------------------------------------------- */
-  (function filters() {
-    const btns = $$('.filter');
-    const cards = $$('.product');
-    if (!btns.length || !cards.length) return;
+  (function coverflow() {
+    const root = $('#coverflow');
+    const stage = $('#coverflowStage');
+    const cards = $$('.coverflow__card', stage || undefined);
+    if (!root || !stage || !cards.length) return;
 
-    btns.forEach(btn => {
+    const total = cards.length;
+    let current = 0;
+    let inView = false;
+    let hovered = false;
+    let timer = null;
+
+    // Geometria por breakpoint — em pixels, porque os transforms são em px.
+    // Recalculada no resize para nunca gerar overflow horizontal na página
+    // (o .coverflow__stage tem overflow:hidden, então o que passar daqui
+    // simplesmente fica escondido, o que é o efeito visual esperado).
+    const geometry = () => {
+      const w = window.innerWidth;
+      if (w <= 640) return { ring1: 118, ring2: 0, scale1: .8, scale2: .6, rot1: 16, rot2: 0, hideRing2: true };
+      if (w <= 900) return { ring1: 172, ring2: 292, scale1: .8, scale2: .62, rot1: 20, rot2: 32, hideRing2: false };
+      return { ring1: 250, ring2: 430, scale1: .82, scale2: .64, rot1: 22, rot2: 34, hideRing2: false };
+    };
+
+    const render = () => {
+      const geo = geometry();
+      cards.forEach((card, idx) => {
+        const offset = (idx - current + total) % total;
+        const isActive = offset === 0;
+        let tx = 0, scale = .4, rot = 0, opacity = 0, z = 0, blur = 0, bright = .4;
+
+        if (offset === 0) {
+          scale = 1; opacity = 1; z = 30; bright = 1;
+        } else if (offset === 1) {
+          tx = geo.ring1; scale = geo.scale1; rot = -geo.rot1; opacity = .65; z = 20; bright = .7;
+        } else if (offset === total - 1) {
+          tx = -geo.ring1; scale = geo.scale1; rot = geo.rot1; opacity = .65; z = 20; bright = .7;
+        } else if (offset === 2 && !geo.hideRing2) {
+          tx = geo.ring2; scale = geo.scale2; rot = -geo.rot2; opacity = .35; z = 10; bright = .5; blur = 1;
+        } else if (offset === total - 2 && !geo.hideRing2) {
+          tx = -geo.ring2; scale = geo.scale2; rot = geo.rot2; opacity = .35; z = 10; bright = .5; blur = 1;
+        }
+
+        card.style.transform = `translate(-50%,-50%) translateX(${tx}px) scale(${scale}) rotateY(${rot}deg)`;
+        card.style.opacity = String(opacity);
+        card.style.zIndex = String(z);
+        card.style.filter = `brightness(${bright})${blur ? ` blur(${blur}px)` : ''}`;
+        card.classList.toggle('is-active', isActive);
+        card.setAttribute('aria-hidden', String(!isActive));
+
+        const cta = $('a', card);
+        if (cta) cta.tabIndex = isActive ? 0 : -1;
+      });
+
+      $$('.cf-dot').forEach((dot, idx) => {
+        const active = idx === current;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-selected', String(active));
+      });
+    };
+
+    const goTo = i => { current = ((i % total) + total) % total; render(); };
+    const next = () => goTo(current + 1);
+    const prev = () => goTo(current - 1);
+
+    $('#cfNext')?.addEventListener('click', next);
+    $('#cfPrev')?.addEventListener('click', prev);
+    $$('.cf-dot').forEach(dot => dot.addEventListener('click', () => goTo(Number(dot.dataset.index))));
+
+    // clicar num card lateral traz ele pro centro
+    stage.addEventListener('click', e => {
+      const card = e.target.closest('.coverflow__card');
+      if (!card || card.classList.contains('is-active')) return;
+      goTo(Number(card.dataset.index));
+    });
+
+    // atalhos de categoria — pulam pro primeiro modelo daquela categoria
+    $$('.filter').forEach(btn => {
       btn.addEventListener('click', () => {
-        const cat = btn.dataset.filter;
-
-        btns.forEach(b => {
+        $$('.filter').forEach(b => {
           const active = b === btn;
           b.classList.toggle('is-active', active);
           b.setAttribute('aria-selected', String(active));
         });
-
-        cards.forEach(card => {
-          const show = cat === 'all' || card.dataset.cat === cat;
-          card.classList.toggle('is-hidden', !show);
-          if (show) {
-            card.classList.remove('is-in');
-            requestAnimationFrame(() => card.classList.add('is-in'));
-          }
-        });
+        const cat = btn.dataset.filter;
+        if (cat === 'all') { goTo(0); return; }
+        const idx = cards.findIndex(c => c.dataset.cat === cat);
+        if (idx >= 0) goTo(idx);
       });
     });
+
+    // swipe no touch
+    let touchX = 0;
+    stage.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(diff) > 45) (diff < 0 ? next() : prev());
+    }, { passive: true });
+
+    // setas do teclado — só quando o carrossel está visível e o foco não
+    // está num campo de formulário (não pode roubar as setas do textarea)
+    window.addEventListener('keydown', e => {
+      if (!inView) return;
+      const tag = document.activeElement?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (e.key === 'ArrowLeft') prev();
+      else if (e.key === 'ArrowRight') next();
+    });
+
+    // autoplay — pausa no hover, no toque e quando sai da tela
+    const AUTOPLAY_MS = 5500;
+    const stopAutoplay = () => { if (timer) { clearInterval(timer); timer = null; } };
+    const startAutoplay = () => {
+      stopAutoplay();
+      if (reduceMotion || total <= 1) return;
+      timer = setInterval(() => { if (!hovered && inView) next(); }, AUTOPLAY_MS);
+    };
+
+    root.addEventListener('mouseenter', () => { hovered = true; });
+    root.addEventListener('mouseleave', () => { hovered = false; });
+    root.addEventListener('touchstart', () => { hovered = true; }, { passive: true });
+    root.addEventListener('touchend', () => { setTimeout(() => { hovered = false; }, 2500); }, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        entries.forEach(entry => { inView = entry.isIntersecting; });
+      }, { threshold: 0.3 }).observe(root);
+    } else {
+      inView = true;
+    }
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(render, 150);
+    });
+
+    render();
+    startAutoplay();
   })();
 
   /* ---------------------------------------------------------------------
@@ -303,7 +419,7 @@
       requestAnimationFrame(loop);
     })();
 
-    $$('a, button, .bento__card, .product, .store, summary').forEach(node => {
+    $$('a, button, .bento__card, .coverflow__card, .store, summary').forEach(node => {
       node.addEventListener('mouseenter', () => el.classList.add('is-hover'));
       node.addEventListener('mouseleave', () => el.classList.remove('is-hover'));
     });
